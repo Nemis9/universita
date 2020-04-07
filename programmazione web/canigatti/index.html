@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    *{
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    html, body{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    section{
+        width: 100%;
+        height: 100%;
+        background-attachment: fixed;
+
+        text-align: center;
+        display: flex;
+    }
+
+    #cani{
+        background-color: red;
+        background-image: url("bg-cani.jpg");
+        background-size: cover;        
+    }        
+
+    #gatti{
+        background-color: green;
+        background-image: url("bg-gatti.jpg");
+        background-size: cover;
+    }
+
+    #can-gat{
+        background-color: blue;
+        background-image: url("bg-cangat.jpg");
+        background-size: cover;
+    }
+
+    section p{
+        margin: auto;
+        padding: 20px 30px;
+        background-color: #fff;
+        opacity: 0.8;  
+
+        width: fit-content;      
+    }
+
+    </style>
+</head>
+<body>
+    <section id="cani"><p>Cani</p></section>  
+    <section id="gatti"><p>Gatti</p></section>
+    <section id="can-gat"><p>Cani e Gatti</p></section>
+</body>
+</html>
