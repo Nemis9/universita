@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test Menu</title>
+    <style>
+
+    *{box-sizing: border-box;}
+    
+    ul#menu {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 11px;
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul#menu li{
+        display: block;
+        float: left;
+        margin: 0px 4px 0px 0px;
+        
+        background-color: coral;
+        border-bottom: 5px solid deepskyblue;
+    }
+    ul#menu li a{
+        display: block;
+        width: 120px;
+        line-height: 30px;
+
+        color: white;
+        text-decoration: none;
+        text-align: center;
+    }
+    ul#menu li:hover , ul#menu li.active{
+        background-color: deepskyblue;
+        border-bottom: 5px solid coral;
+    } 
+
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li class="active"><a href="#">About Us</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <!--<li><a href="#">Se ho un bottone troppo lungo</a></li>-->
+    </ul>
+</body>
+</html>

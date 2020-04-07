@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box; margin: 0; padding: 0;}
+
+        
+
+        #container{
+            width: 800px;
+            margin: 0px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header{
+            background-color: gray;
+            height: 200px;
+            width: 100%;
+            order: 1;
+        }
+
+        nav{
+            background-color: green;
+            height: 70px;
+            width: 25%;
+            order: 2;
+        }
+
+        main{
+            background-color: red;
+            height: 800px;
+            width: 50%;
+            order: 4;
+        }
+
+        aside{
+            background-color: blue;
+            height: 900px;
+            width: 25%;
+            order: 3;
+        }
+
+        footer{
+            background-color: lightgray;
+            height: 300px;
+            width: 100%;
+            order: 5;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>Main</main>
+        <aside>Aside</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

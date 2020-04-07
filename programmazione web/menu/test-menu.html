@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test Menu</title>
+    <style>
+    *{ box-sizing: border-box;margin: 0px; padding: 0px;}
+    
+    ul#menu {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 11px;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul#menu li{
+        display: block;
+        float: left;
+        height: 35px;
+        background-color: tomato;
+        border-bottom: 5px solid steelblue;
+
+        margin: 0 4px 0 0 ;
+
+        position: relative;
+    }
+    ul#menu li a{
+        display: block;
+        width: 120px;
+        text-align: center;
+
+        line-height: 30px;
+        color: white;
+        text-decoration: none;
+
+    }
+
+    ul#menu li:hover,ul#menu li.active{
+        background-color: steelblue;
+        border-bottom: 5px solid tomato;
+    }
+
+
+    ul#menu li ul{
+        position: absolute;
+        display: none;
+        top: 35px;
+    }
+
+    ul#menu li ul li{
+        display: block;
+        float: none;
+        margin: 4px 0 0 0;
+    }
+
+    ul#menu li:hover ul{
+        display: block;
+    }
+
+    div{
+        clear: both;
+        background-color: teal;
+        width: 600px;
+        height: 800px;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li class="active"><a href="#">About Us</a>
+            <ul>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Description</a></li>
+                <li><a href="#">Activity</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Se ho un bottone troppo lungo</a></li>
+    </ul>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+</body>
+</html>

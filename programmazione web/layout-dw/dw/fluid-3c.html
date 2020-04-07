@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Documento senza titolo</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #4E5869;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Selettori tag/elemento ~~ */
+ul, ol, dl { /* A causa delle differenze tra i browser, è buona norma impostare a zero il margine e la spaziatura interna negli elenchi. Per uniformità, potete specificare qui i valori desiderati, oppure nelle voci di elenco (LI, DT, DD) contenute negli elenchi. Tenete presente che le impostazioni effettuate qui verranno applicate a cascata all'elenco .nav a meno che non scegliate di scrivere un selettore più specifico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* La rimozione del margine superiore permette di aggirare il problema che si crea quando i margini possono fuoriuscire dal div che li contiene. Il margine inferiore che rimane permetterà di distanziare gli elementi che seguono. */
+	padding-right: 15px;
+	padding-left: 15px; /* L'aggiunta di una spaziatura ai lati degli elementi contenuti nei div, anziché ai div stessi, consente di evitare ogni calcolo matematico relativo ai riquadri. Come metodo alternativo si può anche utilizzare un div nidificato con spaziatura laterale. */
+}
+a img { /* Questo selettore rimuove il bordo blu predefinito visualizzato in alcuni browser intorno a un'immagine quando è circondata da un collegamento.  */
+	border: none;
+}
+
+/* ~~ L'applicazione di stili ai collegamenti del sito deve rispettare questo ordine, compreso il gruppo di selettori che creano l'effetto hover. ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* A meno che non vogliate personalizzare i collegamenti in un modo molto particolare, è bene applicare la sottolineatura per permetterne una rapida identificazione visiva. */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* Questo gruppo di selettori conferisce alla navigazione tramite tastiera gli stessi effetti hover che si producono quando si usa il mouse. */
+	text-decoration: none;
+}
+
+/* ~~ Questo contenitore circonda tutti gli altri div assegnando ad essi una larghezza basata su percentuale. ~~ */
+.container {
+	width: 80%;
+	max-width: 1260px;/* Può essere utile assegnare una larghezza massima per impedire che questo layout diventi troppo largo su un monitor di grandi dimensioni. Mantiene la lunghezza della riga più leggibile. IE6 non rispetta questa dichiarazione. */
+	min-width: 780px;/* Può essere utile assegnare una larghezza minima per impedire che questo layout diventi troppo stretto. Mantiene la lunghezza della riga più leggibile nelle colonne laterali. IE6 non rispetta questa dichiarazione. */
+	background-color: #FFF;
+	margin: 0 auto; /* Il valore automatico sui lati, abbinato alla larghezza, produce un layout centrato. Non è necessario se impostate la larghezza del .container su 100%. */
+}
+
+/* ~~ All'intestazione non viene assegnata una larghezza. Estenderà l'intera larghezza del layout. Contiene un'immagine segnaposto da sostituire con il vostro logo collegato ~~ */
+.header {
+	background-color: #6F7D94;
+}
+
+/* ~~ Queste sono le colonne del layout. ~~ 
+
+1) La spaziatura viene applicata solo al lato superiore e/o inferiore dei div. Agli elementi all'interno di questi div viene applicata una spaziatura sui lati. In questo modo si evita ogni calcolo matematico relativo ai riquadri. Tenete presente che se aggiungete spaziatura laterale o bordi al div stesso, andranno ad aggiungersi alla larghezza definita per produrre la larghezza *totale*. Potete anche scegliere di rimuovere la spaziatura dell'elemento nel div e inserire un secondo div al suo interno con larghezza nulla e con la spaziatura necessaria per la struttura che state creando.
+
+2) Non è stato applicato alcun margine alle colonne perché sono tutte con float. Se dovete aggiungere un margine, evitate di applicarlo sul lato verso il quale avviene il float (ad esempio, un margine destro su un div impostato per un float verso destra). Spesso è possibile utilizzare una spaziatura come alternativa. Per i div in cui questa regola deve essere ignorata, dovete aggiungere una dichiarazione "display:inline" alla regola del div per risolvere un bug di alcune versioni di Internet Explorer, a causa del quale il margine viene raddoppiato.
+
+3) Poiché le classi possono essere utilizzate più volte in un documento (e a un elemento possono essere applicate più classi), alle colonne sono stati assegnati dei nomi di classe anziché degli ID. Ad esempio, sarebbe possibile impilare due div per barre laterali, se necessario. Potete tranquillamente sostituire i nomi con degli ID se preferite, a condizione che li utilizziate una sola volta per documento.
+
+4) Se preferite la barra di navigazione a destra anziché a sinistra, è sufficiente applicare alle colonne un float nella direzione opposta (tutte a destra anziché a sinistra) in modo da eseguirne il rendering in ordine inverso. Non è necessario spostare i div all'interno del codice HTML.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 20%;
+	background-color: #93A5C4;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 60%;
+	float: left;
+}
+.sidebar2 {
+	float: left;
+	width: 20%;
+	background-color: #93A5C4;
+	padding: 10px 0;
+}
+
+/* ~~ Questo selettore raggruppato fornisce spazio agli elenchi dell'area .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* Questa spaziatura rispecchia la spaziatura destra nella regola di intestazione e paragrafo riportata sopra. La spaziatura è stata applicata al lato inferiore per garantire uno spazio tra gli altri elementi negli elenchi e a sinistra per creare il rientro. Può essere regolata a piacere. */
+}
+
+/* ~~ Gli stili dell'elenco di navigazione (rimovibili se scegliete di utilizzare un menu flyout reimpostato come Spry) ~~ */
+ul.nav {
+	list-style: none; /* Rimuove l'indicatore di elenco */
+	border-top: 1px solid #666; /* Crea il bordo superiore dei collegamenti; tutti gli altri vengono posizionati utilizzando un bordo inferiore sul LI */
+	margin-bottom: 15px; /* Crea lo spazio tra gli elementi di navigazione nel contenuto sottostante */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* Crea la separazione tra i pulsanti */
+}
+ul.nav a, ul.nav a:visited { /* Raggruppando questi selettori si fa in modo che i collegamenti mantengano l'aspetto di pulsante anche dopo che sono stati visitati */
+	padding: 5px 5px 5px 15px;
+	display: block; /* Specifica le proprietà block del collegamento facendo sì che riempia l'intero LI che lo contiene. Fa in modo che l'intera area risponda a un clic del mouse. */
+	text-decoration: none;
+	background-color: #8090AB;
+	color: #000;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* Cambia il colore dello sfondo e del testo per la navigazione tramite mouse e tastiera */
+	background-color: #6F7D94;
+	color: #FFF;
+}
+
+/* ~~ Il piè di pagina ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #6F7D94;
+	position: relative;/* Fornisce hasLayout a IE6 per ottenere un clearing corretto.  */
+	clear: both; /* Questa proprietà clear obbliga il .container a tenere conto di dove terminano le colonne e a contenerle. */
+}
+
+/* ~~ Classi float/clear varie ~~ */
+.fltrt {  /* questa classe può essere utilizzata per applicare un float a un elemento a destra nella pagina. L'elemento con float deve precedere l'elemento al quale deve essere affiancato sulla pagina. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* questa classe può essere utilizzata per applicare un float a un elemento a sinistra nella pagina. L'elemento con float deve precedere l'elemento al quale deve essere affiancato sulla pagina. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* Questa classe può essere inserita in un <br /> o in un div vuoto come elemento finale subito dopo l'ultimo div con float (all'interno del #container) se il #footer sul viene rimosso o estratto dal #container. */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* Questo margine negativo da 1 px può essere posizionato in qualsiasi colonna di questo layout ottenendo lo stesso effetto correttivo. */
+ul.nav a { zoom: 1; }  /* La proprietà zoom fornisce il trigger hasLayout a IE per correggere lo spazio vuoto supplementare tra i collegamenti. */
+</style>
+<![endif]--></head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="" alt="Inserite qui il logo" name="Insert_logo" width="20%" height="90" id="Insert_logo" style="background-color: #8090AB; display:block;" /></a> 
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <li><a href="#">Collegamento uno</a></li>
+      <li><a href="#">Collegamento due</a></li>
+      <li><a href="#">Collegamento tre</a></li>
+      <li><a href="#">Collegamento quattro</a></li>
+    </ul>
+    <p> I collegamenti qui sopra mostrano una struttura di navigazione di base mediante un elenco non ordinato con stili CSS. Utilizzate questa struttura come punto di partenza e modificate le proprietà per produrre un look personalizzato. Se vi servono dei menu flyout, createli utilizzando un menu Spry, un menu widget di Adobe Exchange o una varietà di altre soluzioni javascript o CSS.</p>
+    <p>Se volete posizionare l'area di navigazione in alto, dovete semplicemente spostare il ul.nav nella parte superiore della pagina e ricreare gli stili.</p>
+    <!-- end .sidebar1 --></div>
+  <div class="content">
+    <h1>Istruzioni</h1>
+    <p>Tenete presente che il codice CSS di questi layout contiene molti commenti. Se solitamente lavorate nella vista Progettazione, visualizzate almeno momentaneamente la vista Codice per consultare i suggerimenti sull'uso del codice CSS nei layout liquidi. Potete rimuovere questi commenti prima di lanciare il sito. Per saperne di più sulle tecniche utilizzate in questi layout CSS, leggete questo articolo sul Centro per gli sviluppatori Adobe - <a href="http://www.adobe.com/go/adc_css_layouts">http://www.adobe.com/go/adc_css_layouts</a>.</p>
+    <h2>Metodo di clearing</h2>
+    <p>Poiché tutte le colonne sono con float, questo layout utilizza una dichiarazione clear:both nella regola .footer. Questa tecnica di clearing obbliga il .container a capire dove terminano le colonne per fare apparire i bordi o i colori di bordo che applicate al .container. Se il vostro design richiede la rimozione di .footer dal .container, dovete utilizzare un metodo di clearing differente. Quello più affidabile prevede l'aggiunta di un &lt;br class=&quot;clearfloat&quot; /&gt; o &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; dopo l'ultima colonna con float (ma prima della chiusura del .container). L'effetto di clearing sarà lo stesso.</p>
+    <h3>Sostituzione logo</h3>
+    <p>In questo layout è stata utilizzata un'immagine segnaposto nell'area .header, nel punto in cui probabilmente inserirete un logo. Si consiglia di rimuovere il segnaposto e sostituirlo con il vostro logo collegato. </p>
+    <p> Tenete presente che se utilizzate la finestra di ispezione Proprietà per accedere all'immagine del logo utilizzando il campo Orig. (anziché rimuovere e sostituire il segnaposto), dovrete rimuovere le proprietà di visualizzazione e sfondo in linea. Questi stili in linea vengono utilizzati solo per fare apparire il segnaposto del logo nei browser a scopo di dimostrazione. </p>
+    <p>Per rimuovere gli stili, controllate che il pannello Stili CSS sia visualizzato nella versione Corrente. Selezionate l'immagine e, nel riquadro Proprietà del pannello Stili CSS, fate clic con il pulsante destro ed eliminate le proprietà di visualizzazione e sfondo (display e background). (Naturalmente potete sempre accedere direttamente al codice ed eliminare manualmente gli stili in linea dall'immagine o dal segnaposto.)</p>
+    <h4>Commenti condizionali di Internet Explorer</h4>
+    <p>Questi layout liquidi contengono un commento condizionale di Internet Explorer (IECC) che consente di correggere due problemi. </p>
+    <ol>
+      <li>I browser eseguono tutti allo stesso modo l'arrotondamento delle dimensioni dei div nei layout basati su percentuale. Quando il browser esegue il rendering di un valore come 144,5 px o 564,5 px, deve arrotondarlo al numero intero più vicino. Safari e Opera arrotondano per difetto, Internet Explorer per eccesso e Firefox arrotonda una colonna per eccesso e una per difetto riempiendo completamente il container. Queste diverse modalità di arrotondamento possono determinare delle differenze in alcuni layout. Questo IECC specifica un margine negativo di 1 px per correggere il problema in IE. Potete spostarlo in qualunque colonna (a sinistra o a destra) a seconda delle vostre necessità di layout.</li>
+      <li>La proprietà zoom è stata aggiunta all'ancoraggio all'interno dell'elenco di navigazione poiché, in alcuni casi, viene eseguito il rendering dello spazio vuoto supplementare in IE6 e IE7. Zoom fornisce a IE la sua proprietà hasLayout per correggere questo problema.</li>
+    </ol>
+    <!-- end .content --></div>
+  <div class="sidebar2">
+    <h4>Sfondi</h4>
+    <p>Normalmente, il colore di sfondo di un div viene visualizzato solo per tutta la lunghezza del contenuto. Se desiderate visualizzare una linea di divisione anziché un colore, inserite un bordo sul lato del div .content (ma solo se esso conterrà sempre una quantità maggiore di contenuto).</p>
+    <!-- end .sidebar2 --></div>
+  <div class="footer">
+    <p>Questo .footer contiene la dichiarazione position:relative; per fornire hasLayout a Internet Explorer 6 per il .footer e determinarne il clearing corretto. Se non dovete supportare IE6, potete rimuoverlo.</p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>
