@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Hind|Play&display=swap');
+
+*{
+    font-family: 'Hind', sans-serif;
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+body{
+    background-color: white;
+}
+
+ul {
+	list-style: none;
+}
+
+h1, h2, h3{
+    font-family: 'Play', sans-serif;
+    color: #c76161;
+}
+
+a{
+    color: #3a7777;
+    text-decoration: none;
+}
+a:hover{
+    color: #F5AF33;
+}
+
+header {
+    padding: 0;
+    height: 230px;
+    background-attachment: fixed; 
+    background-image: url("http://pw.netgroup.uniroma2.it/img/pic2.jpg");
+    background-repeat: no-repeat; 
+    background-size: contain;
+    width: 100%;
+}
+header .top-bot{
+    height: 80px;
+}
+#center{
+    height: 70px;
+    background-color: white;
+    font-weight: bold;
+}
+
+#center div{
+    width: 944px;
+    margin: 0 auto;
+    display: flex;
+}
+
+#name{
+    float: left;
+    height: 70px;
+    max-width: 400px;
+    background-image: url("http://pw.netgroup.uniroma2.it/img/bg-logo.png");
+    background-repeat: no-repeat;
+    padding-left: 3%;
+    padding-top: 2%;
+    font-size: 2.2em;
+}
+
+#name h1{
+    padding-left: 9%;
+    font-weight: bold;
+}
+
+#pageMenu{
+    height: 70px;
+    min-width: 544px;
+}
+#pageMenu ul{
+    display: flex;
+    font-size: 1.3em;
+    margin: auto;
+}
+
+#pageMenu li{
+    margin: 0.5em;
+}
+
+
+.wrapper {
+	width: 944px;
+    margin: 0 auto;
+    margin-top: 1%;
+	/*outline: #ff7900 2px dashed;*/
+}
+
+#head, #copy, #newsletter{
+    border-top: 1px solid #888888;
+}
+
+
+#head p{
+    color: #F5AF33;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    float: left;
+}
+
+#head div{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#head img{
+    width: 25px;
+    vertical-align: middle;
+    float: right;
+}
+
+#title{
+    font-size: 2em;
+    float: left;
+}
+#title h1{
+    padding-bottom: 1%;
+}
+#title img{
+    width: 944px;
+}
+
+.main {
+	float: left;
+	width: 600px;
+	margin: 0 auto;
+	/*outline: 2px dashed #0053ae;*/
+}
+
+.main h2{
+    font-size: 1.4em;
+    border-bottom: 1px solid #888888;
+    padding-bottom: 15px;
+}
+
+.list{
+    columns: 2;
+    list-style-image: url("http://pw.netgroup.uniroma2.it/img/dot.png");
+    margin-left: 16px;
+}
+
+.list li{
+    padding: 15px;
+    width: 300px;
+    float: left;
+    text-transform: lowercase;
+    font-size: 1.1em;
+}
+
+#commenti ul{
+    font-size: 14px;
+    line-height: 20px;
+    
+}
+
+#commenti ul p{
+    color: #3d3257;
+}
+
+#commenti ul p:nth-child(2){
+    background-color: #f8f6f9;
+    padding: 25px 15px 25px 15px; 
+}
+
+#commenti li{
+    padding-top: 16px;
+}
+
+.risposta{
+    padding-left: 25px;
+    color: white;
+}
+
+#commenti .risposta p:nth-child(2){
+    background-color: #c76161;
+}
+
+#extras {
+	float: right;
+	width: 300px;
+    margin: 0 auto;
+}
+
+#extras img{
+    padding: 20px 0 20px 0;
+}
+
+.extraMenu h3{
+    font-size: 1.2em;
+}
+
+#extras .extraMenu img{
+    padding: 0px;
+    border: 2px solid #c76161;
+    vertical-align: middle;
+}
+
+#extras li{
+    padding: 17px 0 17px 0;
+}
+
+footer {
+    background: #171717;
+	clear: left; /* starts the footer below the floated content */
+    padding-top: 0.2%;
+    color: #f1f1f1;
+}
+
+footer h3{
+    color: #F5AF33;
+    font-size: 1em;
+    padding-bottom: 3%;
+   /* padding-bottom: 5%;
+    padding-top: 2%;*/
+}
+
+footer h4{
+    color: #c76161;
+    font-size: 1.2em;
+    padding-top: 10px;
+}
+
+.footerMenu{
+    display: flex;
+    flex-flow: column;
+    width: 944px;
+    margin: 0 auto;
+    padding-top: 11px;
+}
+
+.col{
+    width: 33.3333%;
+    float: left;
+    border: none;
+}
+
+.riga-1, .riga-2{
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 17px;
+}
+
+.riga_1{
+    padding-top: 22px;
+}
+
+.riga-3{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 7px;
+}
+
+.riga-3 p{
+    padding-top: 12px;
+}
