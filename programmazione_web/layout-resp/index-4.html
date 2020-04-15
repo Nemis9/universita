@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Test Responsive Page</title>
+    <style>
+        .page {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        
+        .section {
+          width: 100%; /* Mobile Style */
+          height: 300px;
+          display: flex;
+          justify-content: center; /* Per centrare le immagini */
+          align-items: center; /* Per centrare le immagini */
+        }
+        
+        .menu {
+          background-color: #5995DA;
+          height: 80px;
+        }
+        
+        .header {
+          background-color: #B2D6FF;
+        }
+        
+        .content {
+          background-color: #EAEDF0;
+          height: 600px;
+        }
+        
+        .sign-up {
+          background-color: #D6E9FE;
+        }
+        
+        .feature-1 {
+          background-color: #F5CF8E;
+        }
+        
+        .feature-2 {
+          background-color: #F09A9D;
+        }
+        
+        .feature-3 {
+          background-color: #C8C6FA;
+        }
+        
+        /* Tablet Styles */
+        @media only screen and (min-width: 401px) and (max-width: 960px) {
+          .sign-up,.feature-1,.feature-2,.feature-3 {
+                width: 50%;
+            }
+        }
+        
+        /* Desktop Styles */
+        @media only screen and (min-width: 961px) {
+          .page {
+            width: 960px;
+            margin: 0 auto;
+          }
+          .feature-1,
+          .feature-2,
+          .feature-3 {
+            width: 33.3%;
+          }
+          .header {
+            height: 400px;
+          }
+        }   
+        
+    </style>
+</head>
+
+<body>
+    <div class='page'>
+        <div class='section menu'></div>
+        <div class='section header'>
+          <img src='images/header.svg'/>
+        </div>
+        <div class='section content'>
+          <img src='images/content.svg'/>
+        </div>
+        <div class='section sign-up'>
+          <img src='images/sign-up.svg'/>
+        </div>
+        <div class='section feature-1'>
+          <img src='images/feature.svg'/>
+        </div>
+        <div class='section feature-2'>
+          <img src='images/feature.svg'/>
+        </div>
+        <div class='section feature-3'>
+          <img src='images/feature.svg'/>
+        </div>
+    </div>
+</body>
+</html>
