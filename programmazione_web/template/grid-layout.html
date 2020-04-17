@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Grid Example</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="basic.css">
+        <style>
+
+            .container{
+                display: grid;
+                grid-template-columns: repeat(12,1fr);
+                grid-template-rows: 100px auto 100px;
+                gap: 5px;
+                grid-template-areas:
+                    "m m m h h h h h h h h h"
+                    "m m m c c c c c c c c c"
+                    ". . . f f f f f f f f f";
+            }
+
+            .header{
+                /*grid-column: 1/-1;*/
+                grid-area: h;
+            }
+            .menu{
+                /*grid-column: 1/5;*/
+                grid-area: m;
+            }
+
+            .content{
+                /*grid-column: 5/-1;*/
+                grid-area: c;
+                height: 300px;
+            }
+
+            .footer{
+                /*grid-column: 1/-1;*/
+                grid-area: f;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">HEADER</div>
+            <div class="menu">MENU</div>
+            <div class="content">CONTENT</div>
+            <div class="footer">FOOTER</div>
+        </div>
+    </body>
+</html>
